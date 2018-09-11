@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux'
+import * as Actions from './Redux/Actions';
 
 class Quick extends Component {
     constructor(props){
@@ -12,7 +14,8 @@ class Quick extends Component {
         this.handleClickTwo = this.handleClickTwo.bind(this)
     }
     handleClick(){
-        this.props.dispatch(
+        debugger
+        this.props.myAction(
             {
                 type:'uniqueTypeOne'
             }
@@ -20,12 +23,7 @@ class Quick extends Component {
     }
 
     handleClickTwo(){
-        this.props.dispatch(
-            {
-                type:'uniqueTypeTwo',
-                payload: this.state.payload
-            }
-        )
+        this.props.myActionTwo(this.state.payload)
     }
     handleChange(e){
         this.setState({
@@ -49,4 +47,12 @@ class Quick extends Component {
   }
 }
 
-export default connect((state) => {return state})(Quick);
+// function mapStateToProps({myFirstReduxState}){
+//     return {myFirstReduxState}
+// }
+
+// function mapDispatchToProps(dispatch){
+// 	return bindActionCreators({myAction, myActionTwo}, dispatch);
+// }
+
+export default connect(state => state, Actions)(Quick);

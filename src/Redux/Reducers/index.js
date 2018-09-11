@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
+import {UniqueTypeOne, uniqueTypeTwo, hello, goodbye, maybe, abc, josh, Dan} from '../Actions/constraints'
 
 const myFirstReduxState = (state = "This is my first redux property", action) => {
     //action = object
     switch(action.type){
-        case 'uniqueTypeOne':
+        case UniqueTypeOne:
             return "You used unique type one";
-        case 'uniqueTypeTwo': 
+        case uniqueTypeTwo: 
             return action.payload;
         default:
             return state;
@@ -15,9 +16,9 @@ const myFirstReduxState = (state = "This is my first redux property", action) =>
 const mySecondReduxState = (state = "This is my Second redux property", action) => {
 
         switch(action.type){
-            case 'hello':
+            case hello:
                 return "You used unique type one";
-            case 'goodbye': 
+            case goodbye: 
                 return action.payload;
             default:
                 return state;
@@ -26,9 +27,9 @@ const mySecondReduxState = (state = "This is my Second redux property", action) 
 
 const myThirdReduxState = (state = "This is my Third redux property", action) => {
         switch(action.type){
-        case 'maybe':
+        case maybe:
             return "You used unique type one";
-        case 'abc': 
+        case abc: 
             return action.payload;
         default:
             return state;
@@ -37,9 +38,9 @@ const myThirdReduxState = (state = "This is my Third redux property", action) =>
 
 const myFourthReduxState = (state = "This is my Fourth redux property", action) => {
         switch(action.type){
-        case 'josh':
+        case josh:
             return "You used unique type one";
-        case 'Dan': 
+        case Dan: 
             return action.payload;
         default:
             return state;
